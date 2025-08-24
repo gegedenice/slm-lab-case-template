@@ -44,7 +44,7 @@ slm-lab-case-template/
 │  │     ├─ golden_tests.yaml
 │  │     └─ heldout.jsonl
 │  ├─ src/
-│  │  └─ {{cookiecutter.project_slug|replace('-', '_')}}/
+│  │  └─ {{cookiecutter.project_slug}}/
 │  │     ├─ __init__.py
 │  │     ├─ prep/
 │  │     │  └─ templating.py

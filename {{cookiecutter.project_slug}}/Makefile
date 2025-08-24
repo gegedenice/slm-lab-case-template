@@ -12,7 +12,7 @@ install_uv:
     uv sync
 
 prep:
-	python -m {{cookiecutter.project_slug|replace('-', '_')}}.io.loader_hf build \
+	python -m {{cookiecutter.project_slug}}.io.loader_hf build \
 	  --repo Geraldine/metadata-to-unimarc-reasoning \
 	  --train data/processed/train.jsonl \
 	  --eval data/eval/heldout.jsonl \
