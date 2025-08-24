@@ -66,17 +66,3 @@ make eval   # évaluation
 *(rempli selon choix de `cookiecutter.license`)*
 
 ---
-
-## `.gitignore`
-```gitignore
-__pycache__/
-*.pyc
-.venv/
-.env
-runs/
-artifacts/
-*.pt
-*.bin
-*.safetensors
-*.gguf
-.ipynb_checkpoints/

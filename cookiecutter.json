@@ -3,7 +3,7 @@
   "project_slug": "slm-lab-unimarc",
   "description": "Cas d’usage SLM-Lab : génération UNIMARC/XML depuis métadonnées",
   "author_name": "Geraldine Geoffroy",
-  "core_dependency": "git+https://github.com/ton-org/slm-lab-core@v0.3.0",
+  "core_dependency": "git+https://github.com/gegedenice/slm-lab-core@v0.3.0",
   "default_model_id": "LiquidAI/LFM2-350M",
   "templating_mode": ["base", "chat"],
   "license": ["MIT", "Apache-2.0", "Proprietary-Internal"],
