@@ -1,10 +1,10 @@
 .PHONY: venv install prep train eval smoke
 
 venv:
-	uv venv .venv && . .venv/bin/activate && uv pip install -U pip wheel
+	uv venv .venv && source .venv/bin/activate && uv pip install -U pip wheel
 	
 install:
-    uv sync
+	uv sync
 
 prep:
 	python -m {{cookiecutter.project_slug}}.io.loader_hf build \
