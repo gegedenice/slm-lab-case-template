@@ -1,0 +1,18 @@
+[project]
+name = "{{cookiecutter.project_slug}}"
+version = "0.1.0"
+description = "{{cookiecutter.description}}"
+requires-python = ">={{cookiecutter.python_min}}"
+dependencies = [
+  "{{cookiecutter.core_dependency}}",
+  "transformers>=4.44",
+  "datasets>=2.21",
+  "peft>=0.11",
+  "evaluate>=0.4",
+  "typer[all]",
+  "lxml",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+packages = ["{{cookiecutter.project_slug}}"]
