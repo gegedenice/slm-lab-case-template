@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.venv/
+.env
+
+# Artefacts
+runs/
+artifacts/
+*.bin
+*.pt
+*.safetensors
+*.gguf
+
+# Notebooks
+.ipynb_checkpoints/
