@@ -3,11 +3,18 @@
 {{cookiecutter.description}}
 
 ## Installation
+
+With pip
 ```bash
 python -m venv .venv && source .venv/bin/activate
 pip install -U pip wheel
 pip install "{{cookiecutter.core_dependency}}"
 pip install -e .
+```
+
+With uv
+```
+uv sync
 ```
 
 ---
@@ -37,7 +44,7 @@ slm-lab-case-template/
 │  │     ├─ golden_tests.yaml
 │  │     └─ heldout.jsonl
 │  ├─ src/
-│  │  └─ {{cookiecutter.project_slug}}/
+│  │  └─ {{cookiecutter.project_slug|replace('-', '_')}}/
 │  │     ├─ __init__.py
 │  │     ├─ prep/
 │  │     │  └─ templating.py

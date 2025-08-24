@@ -7,6 +7,9 @@ install:
 	pip install -U pip wheel
 	pip install "{{cookiecutter.core_dependency}}"
 	pip install -e .
+	
+install_uv:
+    uv sync
 
 prep:
 	python -m {{cookiecutter.project_slug|replace('-', '_')}}.io.loader_hf build \
