@@ -3,7 +3,7 @@ from pathlib import Path
 import typer
 from datasets import load_dataset
 from slmlab.utils.config import load_config
-from {{cookiecutter.project_slug}}.prep.templating import make_example
+from {{cookiecutter.project_slug|replace('-', '_')}}.prep.templating import make_example
 
 app = typer.Typer()
 

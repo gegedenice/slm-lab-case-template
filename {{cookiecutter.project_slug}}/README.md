@@ -63,6 +63,6 @@ make eval   # évaluation
 ---
 
 ## `LICENSE`
-*(rempli selon choix de `cookiecutter.license`)*
+{{cookiecutter.license}}
 
 ---
