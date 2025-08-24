@@ -2,18 +2,13 @@
 
 {{cookiecutter.description}}
 
-## Installation
+## Installation (avec uv)
 
-With pip
 ```bash
-python -m venv .venv && source .venv/bin/activate
-pip install -U pip wheel
-pip install "{{cookiecutter.core_dependency}}"
-pip install -e .
-```
+# Créer/activer un venv (optionnel)
+uv venv .venv && source .venv/bin/activate
 
-With uv
-```
+# Installer les dépendances depuis pyproject.toml (dont slmlab-core via [tool.uv.sources])
 uv sync
 ```
 

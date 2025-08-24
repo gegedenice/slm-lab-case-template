@@ -1,14 +1,9 @@
 .PHONY: venv install prep train eval smoke
 
 venv:
-	python -m venv .venv && . .venv/bin/activate && pip install -U pip wheel
-
-install:
-	pip install -U pip wheel
-	pip install "{{cookiecutter.core_dependency}}"
-	pip install -e .
+	uv venv .venv && . .venv/bin/activate && uv pip install -U pip wheel
 	
-install_uv:
+install:
     uv sync
 
 prep:
