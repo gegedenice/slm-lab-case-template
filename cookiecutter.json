@@ -1,6 +1,6 @@
 {
   "project_name": "SLM Lab — UNIMARC",
-  "project_slug": "slm-lab-unimarc",
+  "project_slug": "slm_lab_unimarc",
   "description": "Cas d’usage SLM-Lab : génération UNIMARC/XML depuis métadonnées",
   "author_name": "Geraldine Geoffroy",
   "core_dependency": "git+https://github.com/gegedenice/slm-lab-core",
