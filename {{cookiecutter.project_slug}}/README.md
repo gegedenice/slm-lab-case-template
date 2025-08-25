@@ -57,10 +57,23 @@ slm-lab-case-template/
 ## Usage
 
 ```
+make venv
+make install
 make prep   # prépare le dataset
 make train  # fine-tune LoRA
 make eval   # évaluation
 ```
+
+## Config in defaullt.yaml 
+
+- bf16: true → Use bfloat16 precision.
+  - Works best on Ampere / Hopper NVIDIA GPUs (A100, H100, etc.) and on TPUs.
+  - Safe numerically (much wider exponent range than fp16, so fewer NaN issues).
+  - Usually preferred when supported.
+- fp16: true → Use half precision (float16).
+  - Works on most NVIDIA GPUs (including older ones).
+  - Smaller dynamic range → sometimes requires loss scaling to avoid overflows.
+- Don’t set both → Hugging Face Trainer expects one or the other.
 
 ---
 
