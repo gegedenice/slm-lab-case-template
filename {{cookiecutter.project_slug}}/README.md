@@ -64,6 +64,8 @@ make train  # fine-tune LoRA
 make eval   # évaluation
 ```
 
+--- 
+
 ## Config in default.yaml 
 
 - bf16: true → Use bfloat16 precision.
@@ -74,6 +76,15 @@ make eval   # évaluation
   - Works on most NVIDIA GPUs (including older ones).
   - Smaller dynamic range → sometimes requires loss scaling to avoid overflows.
 - Don’t set both → Hugging Face Trainer expects one or the other.
+
+---
+
+## Misc
+
+- .venv in notebooks
+```
+ipython kernel install --user --name=.venv
+```
 
 ---
 
