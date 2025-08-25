@@ -64,7 +64,7 @@ make train  # fine-tune LoRA
 make eval   # évaluation
 ```
 
-## Config in defaullt.yaml 
+## Config in default.yaml 
 
 - bf16: true → Use bfloat16 precision.
   - Works best on Ampere / Hopper NVIDIA GPUs (A100, H100, etc.) and on TPUs.
