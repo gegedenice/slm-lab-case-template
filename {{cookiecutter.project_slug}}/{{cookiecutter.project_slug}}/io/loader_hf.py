@@ -38,8 +38,5 @@ def build(
 
     typer.echo(f"Wrote {len(train_rows)} train and {len(eval_rows)} eval examples (mode={mode}).")
 
-def main():
-    app()
-
 if __name__ == "__main__":
-    main()
+    typer.run(build)

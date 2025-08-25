@@ -16,7 +16,7 @@ install: $(VENV)
 # ---- Project tasks (always run inside the venv via `uv run`) ----
 
 prep: install
-	uv run python -m slm_lab_unimarc.io.loader_hf build \
+	uv run python -m slm_lab_unimarc.io.loader_hf \
 	  --repo Geraldine/metadata-to-unimarc-reasoning \
 	  --train data/processed/train.jsonl \
 	  --eval data/eval/heldout.jsonl \
