@@ -16,7 +16,7 @@ train:
   logging_steps: 25
   eval_steps: 100
   save_steps: 100
-  bf16: false
+  bf16: true
   fp16: false
   gradient_checkpointing: true
   num_proc: 2
