@@ -23,7 +23,7 @@ prep: install
 	  --eval-ratio 0.2
 
 train: install
-	uv run python -m cli.finetune run --cfg-path configs/default.yaml
+	uv run python -m cli.finetune --cfg-path configs/default.yaml
 
 eval: install
 	uv run python -m cli.evaluate run LiquidAI/LFM2-350M runs/adapter data/eval/heldout.jsonl
