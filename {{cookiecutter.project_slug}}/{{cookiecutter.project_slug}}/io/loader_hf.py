@@ -6,6 +6,15 @@ import slmlab
 from slmlab.utils.config import load_config
 from {{cookiecutter.project_slug}}.prep.templating import make_example
 
+def get_mode_from_cfg(cfg, default="base"):
+    # Works for both dict and SimpleNamespace trees
+    if isinstance(cfg, dict):
+        return cfg.get("templating", {}).get("mode", default)
+    templating = getattr(cfg, "templating", None)
+    if templating is None:
+        return default
+    return getattr(templating, "mode", default)
+    
 app = typer.Typer()
 
 @app.command()
@@ -17,7 +26,7 @@ def build(
     cfg_path: Path = typer.Option(Path("configs/default.yaml"), "--cfg-path"),
 ):
     cfg = load_config(cfg_path)
-    mode = cfg.get("templating", {}).get("mode", "base")
+    mode = get_mode_from_cfg(cfg, default="base")
     ds = load_dataset(repo)["train"]
     rows = [r for r in ds if r.get("metadata") and r.get("unimarc_record")]
     n_eval = max(1, int(len(rows) * eval_ratio))
