@@ -10,21 +10,18 @@ app = typer.Typer()
 
 @app.command()
 def build(
-    repo: str,
-    train: Path = Path("data/processed/train.jsonl"),
-    eval: Path = Path("data/eval/heldout.jsonl"),
-    eval_ratio: float = 0.2,
-    cfg_path: Path = Path("configs/default.yaml"),
+    repo: str = typer.Option(..., "--repo", "-r", help="HF dataset repo, e.g. owner/dataset"),
+    train: Path = typer.Option(Path("data/processed/train.jsonl"), "--train"),
+    eval: Path = typer.Option(Path("data/eval/heldout.jsonl"), "--eval"),
+    eval_ratio: float = typer.Option(0.2, "--eval-ratio", min=0.0, max=1.0),
+    cfg_path: Path = typer.Option(Path("configs/default.yaml"), "--cfg-path"),
 ):
     cfg = load_config(cfg_path)
     mode = cfg.get("templating", {}).get("mode", "base")
-
     ds = load_dataset(repo)["train"]
     rows = [r for r in ds if r.get("metadata") and r.get("unimarc_record")]
-    n = len(rows)
-    n_eval = max(1, int(n * eval_ratio))
-    eval_rows = rows[:n_eval]
-    train_rows = rows[n_eval:]
+    n_eval = max(1, int(len(rows) * eval_ratio))
+    eval_rows, train_rows = rows[:n_eval], rows[n_eval:]
 
     train.parent.mkdir(parents=True, exist_ok=True)
     eval.parent.mkdir(parents=True, exist_ok=True)
@@ -41,5 +38,8 @@ def build(
 
     typer.echo(f"Wrote {len(train_rows)} train and {len(eval_rows)} eval examples (mode={mode}).")
 
-if __name__ == "__main__":
+def main():
     app()
+
+if __name__ == "__main__":
+    main()
