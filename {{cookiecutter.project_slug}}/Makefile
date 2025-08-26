@@ -13,6 +13,13 @@ venv: $(VENV)
 install: $(VENV)
 	uv sync
 
+# ---- Load .env file ----
+
+ifneq (,$(wildcard .env))
+include .env
+export
+endif
+
 # ---- Project tasks (always run inside the venv via `uv run`) ----
 
 prep: install

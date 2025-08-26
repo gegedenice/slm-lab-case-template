@@ -6,6 +6,7 @@
   "core_repo_url": "https://github.com/gegedenice/slm-lab-core",
   "default_model_id": "LiquidAI/LFM2-350M",
   "templating_mode": ["base", "chat"],
+  "hugging_face_hub_token": "hf_xxx_placeholder",
   "license": ["MIT", "Apache-2.0", "Proprietary-Internal"],
   "python_min": "3.10"
 }
