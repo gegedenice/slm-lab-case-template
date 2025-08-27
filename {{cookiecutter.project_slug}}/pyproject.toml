@@ -5,7 +5,6 @@ description = "{{cookiecutter.description}}"
 requires-python = ">={{cookiecutter.python_min}}"
 dependencies = [
   "slm-lab-core",
-  "transformers>=4.44",
   "datasets>=2.21",
   "peft>=0.11",
   "evaluate>=0.4",
@@ -19,3 +18,4 @@ packages = ["{{cookiecutter.project_slug}}"]
 
 [tool.uv.sources]
 slm-lab-core = { git = "{{cookiecutter.core_repo_url}}" }
+transformers = { git = "https://github.com/huggingface/transformers" }
